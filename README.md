@@ -3,6 +3,8 @@
 
 ## usefull commands for koray 
 
+git pull
+
 git status
 
 git add .
@@ -12,7 +14,7 @@ git commit -m "commited something"
 git push origin {branch_name}
 
 
-## updating mirac tomain
+## updating mirac to main
 
 git switch mirac
 
