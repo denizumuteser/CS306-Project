@@ -1,0 +1,50 @@
+.header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.return {
+    color: black;
+    font-size: 18px;
+    background-color: gray;
+    border-radius: 45px;
+    padding: 6px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    font-size: 28px;
+    width: 200px;
+    height: 50px;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    border-radius: 45px;
+}
