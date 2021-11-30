@@ -19,5 +19,9 @@
         <a class="btn" href="./selection.html">Selection</a>
     </div>
     
+    <?php
+    include "config.php";
+    ?>
+
 </body>
 </html>

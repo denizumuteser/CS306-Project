@@ -10,11 +10,78 @@
 <body>
     <div class="header">
         <h1>Web Interface Administration Panel</h1>
-        <a class="return" href="./index.html">Return</a>
+        <a class="return" href="./index.php">Return</a>
     </div>
 
     <div class="content">
+        <h2>Insertion</h2>
+        
+        <Form id="insertion-form" action="insert.php" method="post">
+            <fieldset id="fieldsetInputs">
+
+                <label for="ftype">What to insert:</label>
+                <select name="ftype" id="ftype">
+                    <option value="person">Person</option>
+                    <option value="student">Student</option>
+                    <option value="course">Course</option>
+                    <!--insert all insertable things here-->
+                </select>
+
+                <div class="formfields">
+                    
+                    <div class="inputfield" id="nameField">
+                        <label for="fname">Name:</label>
+                        <input type="text", id="fname", name="fname", placeholder="Enter name">
+                    </div>
+                    
+                    <div class="inputfield" id="surnameField">
+                        <label for="fsurname">Surname:</label>
+                        <input type="text", id="fsurname", name="fsurname", placeholder="Enter surnname">
+                    </div>
+
+                    <div class="inputfield", id="idField">
+                        <label for="fid">id:</label>
+                        <input type="text", id="fid", name="fid", placeholder="Enter id">
+                    </div>
+
+                    <div class="inputfield", id="usernameField">
+                        <label for="fusername">Username:</label>
+                        <input type="text", id="fusername", name="fusername", placeholder="Enter username">
+                    </div>
+
+                    <div class="inputfield", id="passwordField">
+                        <label for="fpassword">Password:</label>
+                        <input type="text", id="fpassword", name="fpassword", placeholder="Enter password">
+                    </div>
+
+                    <div class="inputfield", id="course_idField">
+                        <label for="fcourse_id">Course id:</label>
+                        <input type="text" name="fcourse_id" id="fcourse_id">
+                    </div>
+
+                    <div class="inputfield", id="course_codeField">
+                        <label for="fcourse_code">Course code:</label>
+                        <input type="text" name="fcourse_code" id="fcourse_code">
+                    </div>
+
+                    <div class="inputfield", id="course_creditsField">
+                        <label for="fcourse_credits">Course credits:</label>
+                        <input type="text" name="fcourse_credits" id="fcourse_credits">
+                    </div>
+
+                    <!--insert all possible input fields-->
+
+                </div>
+
+                
+                <button type="submit">Insert</button>
+                
+            </fieldset>
+
+        </Form>
+        
     </div>
+    <script src="insertion.js"></script>
     
 </body>
 </html>
