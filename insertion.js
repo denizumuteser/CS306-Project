@@ -17,7 +17,6 @@ clearFields();
 
 document.getElementById('ftype').onchange = function(e) {
     clearFields();
-    console.log("clicked");
     value = e.target.value;
     
     if (value == "person")
