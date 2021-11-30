@@ -32,10 +32,18 @@ if (!empty($_POST['ftype']))
         $sql_statement = "INSERT INTO course(course_id, code, credits) VALUES ($id,'$code',$credits)";
     }
 
+    elseif ($type == "club")
+    {
+        $id = $_POST['fclub_id'];
+        $membercount = $_POST['fclub_member_count'];
+        $email = $_POST['fclub_email'];
+        $name = $_POST['fclub_name'];
 
+        $sql_statement = "INSERT INTO club(club_id, member_count, email, name) VALUES ($id,$membercount,'$email','$name')";
+    }
 
+    //INSERT CONDITIONS HERE
 
-    
     echo "SQL statement: " . $sql_statement;
     $result = mysqli_query($db, $sql_statement);
     if($result == 1) {

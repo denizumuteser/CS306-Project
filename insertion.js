@@ -41,5 +41,13 @@ document.getElementById('ftype').onchange = function(e) {
         document.getElementById("course_creditsField").style.display = "block";
     }
 
+    else if (value = "club")
+    {
+        document.getElementById("club_idField").style.display = "block";
+        document.getElementById("club_member_countField").style.display = "block";
+        document.getElementById("club_emailField").style.display = "block";
+        document.getElementById("club_nameField").style.display = "block";
+    }
+
 }
 
