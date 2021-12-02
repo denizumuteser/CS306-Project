@@ -30,7 +30,16 @@
                     <option value="faculty">Faculty</option>
                     <option value="program">Program</option>
                     <option value="timeslot">TimeSlot</option>
-                </select>    
+                </select>   
+
+                <label for="fselectwhere">WHERE</label>
+                <input type="text", id="fselectwhere", name="fselectwhere">
+                
+                <label for="fselectgroupby">GROUP BY</label>
+                <input type="text", id="fselectgroupby", name="fselectgroupby">
+
+                <label for="fselecthaving">HAVING</label>
+                <input type="text", id="fselecthaving", name="fselecthaving">
 
                 <button type="submit">Select</button>
                 
