@@ -78,7 +78,9 @@ if (!empty($_POST['ftype']))
     //INSERT CONDITIONS HERE
 
     echo "SQL statement: " . $sql_statement;
+    
     $result = mysqli_query($db, $sql_statement);
+
     if($result == 1) {
         echo "Statement inserted successfully";
     }
