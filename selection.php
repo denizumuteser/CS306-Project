@@ -1,32 +1,43 @@
-<?php
-header('Content-type: text/plain');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Interface</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Web Interface Administration Panel</h1>
+        <a class="return" href="./index.php">Return</a>
+    </div>
 
-include "config.php";
+    <div class="content">
+        <h2>Selection</h2>
+        <Form id="insertion-form" action="select.php" method="post">
+            <fieldset id="fieldsetInputs">
+                <label for="fselectwhat">SELECT</label>
+                <input type="text", id="fselectwhat", name="fselectwhat">
 
-#if name is not empty
-if (!empty($_POST['fselectfrom']))
-{
-    $select_what = $_POST['fselectwhat'];
-    $select_from = $_POST['fselectfrom'];
+                <label for="fselectfrom">FROM</label>
+                <select name="fselectfrom", id="fselectfrom">
+                    <option value=""></option>
+                    <option value="person">Person</option>
+                    <option value="student">Student</option>
+                    <option value="course">Course</option>
+                    <option value="club">Club</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="program">Program</option>
+                    <option value="timeslot">TimeSlot</option>
+                </select>    
 
-    $sql_statement = "SELECT " . $select_what . " FROM " . $select_from;
+                <button type="submit">Select</button>
+                
+            </fieldset>
 
-    echo "SQL statement: " . $sql_statement;
+        </Form>
+    </div>
     
-    $result = mysqli_query($db, $sql_statement);
-
-    echo "\n";
-    while($row = mysqli_fetch_array($result))
-    {
-        $index = 0;
-        while($index < mysqli_num_fields($result))
-        {
-            $field = mysqli_fetch_field_direct($result, $index);
-            echo $field->name . ": " . $row[$index] . " ";
-            
-            $index += 1;
-        }
-        echo "\n";
-    }
-}
-?>
+</body>
+</html>
