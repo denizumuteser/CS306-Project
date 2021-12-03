@@ -31,6 +31,11 @@
                     <option value="faculty">Faculty</option>
                     <option value="program">Program</option>
                     <option value="timeslot">TimeSlot</option>
+                    <option value="manages">Manages</option>
+                    <option value="member_of">Member_of</option>
+                    <option value="enrolls_in">Enrolls_in</option>
+                    <option value="counts_in">Counts_in</option>
+                    <option value="has_prerequisite">Has_prerequisite</option>
                     <!--insert all insertable things here-->
                 </select>
 
@@ -198,13 +203,68 @@
                         <label for="ftimeslot_end_time">End time:</label>
                         <input type="text" name="ftimeslot_end_time" id="ftimeslot_end_time">
                     </div>
+                    <!-- MANAGES -->
+                    <div class="inputfield" , id="manages_student_idField">
+                        <label for="fmanages_student_id">Student id:</label>
+                        <input type="text" name="fmanages_student_id" id="fmanages_student_id">
+                    </div>
 
+                    <div class="inputfield" , id="manages_club_idField">
+                        <label for="fmanages_club_id">Club id:</label>
+                        <input type="text" name="fmanages_club_id" id="fmanages_club_id">
+                    </div>
 
+                    <div class="inputfield" , id="manages_roleField">
+                        <label for="fmanages_role">Role:</label>
+                        <input type="text" name="fmanages_role" id="fmanages_role">
+                    </div>
+                    <!-- MEMBER_OF -->
+                    <div class="inputfield" , id="member_of_student_idField">
+                        <label for="fmember_of_student_id">Student id:</label>
+                        <input type="text" name="fmember_of_student_id" id="fmember_of_student_id">
+                    </div>
 
+                    <div class="inputfield" , id="member_of_club_idField">
+                        <label for="fmember_of_club_id">Club id:</label>
+                        <input type="text" name="fmember_of_club_id" id="fmember_of_club_id">
+                    </div>
+                    <!-- MEMBER_OF -->
+                    <div class="inputfield" , id="enrolls_in_student_idField">
+                        <label for="fenrolls_in_student_id">Student id:</label>
+                        <input type="text" name="fenrolls_in_student_id" id="fenrolls_in_student_id">
+                    </div>
+
+                    <div class="inputfield" , id="enrolls_in_program_idField">
+                        <label for="fenrolls_in_program_id">Program id:</label>
+                        <input type="text" name="fenrolls_in_program_id" id="fenrolls_in_program_id">
+                    </div>
+                    <!-- Counts_IN -->
+                    <div class="inputfield" , id="counts_in_course_idField">
+                        <label for="fcounts_in_course_id">Course id:</label>
+                        <input type="text" name="fcounts_in_course_id" id="fcounts_in_course_id">
+                    </div>
+
+                    <div class="inputfield" , id="counts_in_program_idField">
+                        <label for="fcounts_in_program_id">Program id:</label>
+                        <input type="text" name="fcounts_in_program_id" id="fcounts_in_program_id">
+                    </div>
+                    <div class="inputfield" , id="counts_in_typeField">
+                        <label for="fcounts_in_type">Type:</label>
+                        <input type="text" name="fcounts_in_type" id="fcounts_in_type">
+                    </div>
+                    <!-- Counts_IN -->
+                    <div class="inputfield" , id="has_prerequisite_course_idField">
+                        <label for="fhas_prerequisite_course_id">Course id:</label>
+                        <input type="text" name="fhas_prerequisite_course_id" id="fhas_prerequisite_course_id">
+                    </div>
+                    <div class="inputfield" , id="has_prerequisite_prerequisite_idField">
+                        <label for="fhas_prerequisite_prerequisite_id">Prerequisite id:</label>
+                        <input type="text" name="fhas_prerequisite_prerequisite_id" id="fhas_prerequisite_prerequisite_id">
+                    </div>
                     <!--insert all possible input fields-->
 
                 </div>
-
+                
 
                 <button type="submit" , name="action" , value="insert">Insert</button>
                 <button type="submit" , name="action" , value="view_table">View Table</button>
