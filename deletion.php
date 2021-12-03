@@ -15,6 +15,35 @@
 
     <div class="content">
         <h2>Deletion</h2>
+        
+        <Form id="deletion-form" action="delete.php" method="post">
+            <fieldset id="fieldsetInputs">
+
+                <label for="ftype">Delete from:</label>
+                <select name="ftype", id="ftype">
+                    <option value=""></option>
+                    <option value="person">Person</option>
+                    <option value="student">Student</option>
+                    <option value="course">Course</option>
+                    <option value="club">Club</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="program">Program</option>
+                    <option value="timeslot">TimeSlot</option>
+                    <!--insert all tables here-->
+                </select>
+
+                <div class="inputfield", id="didField">
+                    <label for="fdid">ID:</label>
+                    <input type="text", id="fdid", name="fdid", placeholder="Enter id">
+                </div>     
+
+  
+                <button type="submit">Delete</button>
+                
+            </fieldset>
+
+        </Form>
+        
     </div>
     
 </body>
