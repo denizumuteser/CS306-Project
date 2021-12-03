@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Interface</title>
@@ -62,51 +62,60 @@
         $type = $_POST['ftype'];
 
         if ($type == "person") {
-            $id = empty($_POST['fid']) ? NULL : $_POST['fid'];
-            $username = empty($_POST['fusername']) ? NULL : $_POST['fusername'];
-            $password = empty($_POST['fpassword']) ? NULL : $_POST['fpassword'];
-            $name = empty($_POST['fname']) ? NULL : $_POST['fname'];
-            $surname = empty($_POST['fsurname']) ? NULL : $_POST['fsurname'];
-            $gender = empty($_POST['fgender']) ? NULL : $_POST['fgender'];
-            $birthdate = empty($_POST['fbirthdate']) ? NULL : $_POST['fbirthdate'];
-            $address = empty($_POST['faddress']) ? NULL : $_POST['faddress'];
-            $email = empty($_POST['femail']) ? NULL : $_POST['femail'];
-            $phonenumber = empty($_POST['fphonenumber']) ? NULL : $_POST['fphonenumber'];
+            $id = empty($_POST['fid']) ? "NULL" : $_POST['fid'];
+            $username = empty($_POST['fusername']) ? "NULL" : "'" . $_POST['fusername'] . "'";
+            $password = empty($_POST['fpassword']) ? "NULL" :  "'" . $_POST['fpassword'] . "'";
+            $name = empty($_POST['fname']) ? "NULL" :  "'" . $_POST['fname'] .  "'";
+            $surname = empty($_POST['fsurname']) ? "NULL" :  "'" . $_POST['fsurname'] .  "'";
+            $gender = empty($_POST['fgender']) ? "NULL" : $_POST['fgender'];
+            $birthdate = empty($_POST['fbirthdate']) ? "NULL" :  "'" . $_POST['fbirthdate'] . "'";
+            $address = empty($_POST['faddress']) ? "NULL" : "'" . $_POST['faddress'] . "'";
+            $email = empty($_POST['femail']) ? "NULL" : "'" . $_POST['femail'] . "'";
+            $phonenumber = empty($_POST['fphonenumber']) ? "NULL" : "'" . $_POST['fphonenumber'] . "'";
 
-            $sql_statement = "INSERT INTO person(id, username, password, name, surname, gender, birth_date, address, email, phone_number) VALUES ($id,'$username','$password','$name','$surname', $gender, '$birthdate', '$address', '$email', '$phonenumber')";
+            $sql_statement = "INSERT INTO person(id, username, password, name, surname, gender, birth_date, address, email, phone_number) VALUES ($id, $username, $password, $name, $surname, $gender, $birthdate, $address, $email, $phonenumber)";
         } elseif ($type == "student") {
-            $id = $_POST['fstudent_id'];
-            $cgpa = $_POST['fstudent_cgpa'];
-            $enroll_year = $_POST['fstudent_enroll_year']; # TO DO: Check if you can try to force it into a YEAR datatype
-            $scholarship = $_POST['fstudent_scholarship'];
-            $level = $_POST['fstudent_level'];
-            $advisor_id = $_POST['fstudent_advisor_id'];
+            $id = empty($_POST['fstudent_id']) ? "NULL" : $_POST['fstudent_id'];
+            $cgpa = empty($_POST['fstudent_cgpa']) ? "NULL" : $_POST['fstudent_cgpa'];
+            $enroll_year = empty($_POST['fstudent_enroll_year']) ? "NULL" : "'" . $_POST['fstudent_enroll_year'] . "'";
+            $scholarship = empty($_POST['fstudent_scholarship']) ? "NULL" : $_POST['fstudent_scholarship'];
+            $level = empty($_POST['fstudent_level']) ? "NULL" : "'" . $_POST['fstudent_level'] . "'";
+            $advisor_id = empty($_POST['fstudent_advisor_id']) ? "NULL" : $_POST['fstudent_advisor_id'];
 
-            $sql_statement = "INSERT INTO student(student_id,cgpa,scholarship,level,advisor_id) VALUES ($id,$cgpa,$scholarship,'$level',$advisor_id)";
-        } elseif ($type == "course") {
-            $id = $_POST['fcourse_id'];
-            $code = $_POST['fcourse_code'];
-            $credits = $_POST['fcourse_credits'];
+            $sql_statement = "INSERT INTO student(student_id,cgpa,enroll_year,scholarship,level,advisor_id) VALUES ($id,$cgpa,$enroll_year,$scholarship,$level,$advisor_id)";
+        } elseif ($type == "instructor") {
+            $id = empty($_POST['finstructor_id']) ? "NULL" : $_POST['finstructor_id'];
+            $faculty_office_location = empty($_POST['finstructor_faculty_office_location']) ? "NULL" : "'" . $_POST['finstructor_faculty_office_location'] . "'";
+            $title = empty($_POST['finstructor_title']) ? "NULL" : "'" . $_POST['finstructor_title'] . "'";
+            $since = empty($_POST['finstructor_since']) ? "NULL" : "'" . $_POST['finstructor_since'] . "'";
+            $faculty_id = empty($_POST['finstructor_faculty_id']) ? "NULL" : $_POST['finstructor_faculty_id'];
 
-            $sql_statement = "INSERT INTO course(course_id, code, credits) VALUES ($id,'$code',$credits)";
-        } elseif ($type == "club") {
-            $id = $_POST['fclub_id'];
-            $membercount = $_POST['fclub_member_count'];
-            $email = $_POST['fclub_email'];
-            $name = $_POST['fclub_name'];
-
-            $sql_statement = "INSERT INTO club(club_id, member_count, email, name) VALUES ($id,$membercount,'$email','$name')";
+            $sql_statement = "INSERT INTO instructor(instructor_id,faculty_office_location,title,since,faculty_id) VALUES ($id,$faculty_office_location,$title,$since,$faculty_id)";
         } elseif ($type == "faculty") {
-            $id = $_POST['ffaculty_id'];
-            $name = $_POST['ffaculty_name'];
-            $roomcount = $_POST['ffaculty_room_count'];
+            $id = empty($_POST['ffaculty_id']) ? "NULL" : $_POST['ffaculty_id'];
+            $name = empty($_POST['ffaculty_name']) ? "NULL" : "'" . $_POST['ffaculty_name'] . "'";
+            $roomcount = empty($_POST['ffaculty_room_count']) ? "NULL" : $_POST['ffaculty_room_count'];
 
-            $sql_statement = "INSERT INTO faculty(faculty_id,name,room_count) VALUES ($id,'$name',$roomcount)";
+            $sql_statement = "INSERT INTO faculty(faculty_id,name,room_count) VALUES ($id,$name,$roomcount)";
+        } elseif ($type == "club") {
+            $id = empty($_POST['fclub_id']) ? "NULL" : "'" . $_POST['fclub_id'] . "'";
+            $email = empty($_POST['fclub_email']) ? "NULL" : "'" . $_POST['fclub_email'] . "'";
+            $name = empty($_POST['fclub_name']) ? "NULL" : "'" . $_POST['fclub_name'] . "'";
+
+            $sql_statement = "INSERT INTO club(club_id, email, name) VALUES ($id,$email,$name)";
+        } elseif ($type == "course") {
+            $id = empty($_POST['fcourse_id']) ? "NULL" : $_POST['fcourse_id'];
+            $name = empty($_POST['fcourse_name']) ? "NULL" : "'" . $_POST['fcourse_name'] . "'";
+            $code = empty($_POST['fcourse_code']) ? "NULL" : "'" . $_POST['fcourse_code'] . "'";
+            $credits = empty($_POST['fcourse_credits']) ? "NULL" : $_POST['fcourse_credits'];
+            $level = empty($_POST['fcourse_level']) ? "NULL" : "'" . $_POST['fcourse_level'] . "'";
+
+            $sql_statement = "INSERT INTO course(course_id, name, code, credits, level) VALUES ($id,$name,$code,$credits,$level)";
         } elseif ($type == "program") {
-            $id = $_POST['fprogram_id'];
-            $name = $_POST['fprogram_name'];
+            $id = empty($_POST['fprogram_id']) ? "NULL" : $_POST['fprogram_id'];
+            $name = empty($_POST['fprogram_name']) ? "NULL" : "'" . $_POST['fprogram_name'] . "'";
 
-            $sql_statement = "INSERT INTO program(program_id,name) VALUES ($id,'$name')";
+            $sql_statement = "INSERT INTO program(program_id,name) VALUES ($id,$name)";
         } elseif ($type == "timeslot") {
             $id = $_POST['ftimeslot_id'];
             $day = $_POST['ftimeslot_day'];
@@ -114,7 +123,15 @@
             $end_time = $_POST['ftimeslot_end_time'];
             // koray was here but could not figure out how to implement day and time variables below here :)
             $sql_statement = "INSERT INTO program(timeslot_id,day,begin_time,end_time) VALUES ($id,'$day')";
+        } elseif ($type == "manages") {
+            $student_id = $_POST['fmanages_student_id'];
+            $club_id = $_POST['fmanages_club_id'];
+            $role = $_POST['fmanages_role'];
+            $sql_statement = "INSERT INTO manages(student_id,club_id,role) VALUES ($student_id,$club_id,'$role')";
         }
+
+
+
         //INSERT CONDITIONS HERE
 
         echo "SQL statement: " . $sql_statement;

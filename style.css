@@ -76,8 +76,6 @@ fieldset {
 .btn:hover {
     background-color: grey;
     border: solid white 2px;
-    transition: 0.1s;
-    transition-timing-function: ease-in-out;
 }
 
 table {
