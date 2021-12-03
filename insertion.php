@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Interface</title>
 </head>
+
 <body>
     <div class="header">
         <h1>Web Interface Administration Panel</h1>
@@ -15,12 +17,12 @@
 
     <div class="content">
         <h2>Insertion</h2>
-        
+
         <Form id="insertion-form" action="insert.php" method="post">
             <fieldset id="fieldsetInputs">
 
                 <label for="ftype">What to insert:</label>
-                <select name="ftype", id="ftype">
+                <select name="ftype" , id="ftype">
                     <option value=""></option>
                     <option value="person">Person</option>
                     <option value="student">Student</option>
@@ -33,53 +35,80 @@
                 </select>
 
                 <div class="formfields">
-                    
+
+                    <!-- PERSON -->
+                    <div class="inputfield" , id="idField">
+                        <label for="fid">id:</label>
+                        <input type="text" , id="fid" , name="fid" , placeholder="Enter id">
+                    </div>
+
+                    <div class="inputfield" , id="usernameField">
+                        <label for="fusername">Username:</label>
+                        <input type="text" , id="fusername" , name="fusername" , placeholder="Enter username">
+                    </div>
+
+                    <div class="inputfield" , id="passwordField">
+                        <label for="fpassword">Password:</label>
+                        <input type="text" , id="fpassword" , name="fpassword" , placeholder="Enter password">
+                    </div>
+
                     <div class="inputfield" id="nameField">
                         <label for="fname">Name:</label>
-                        <input type="text", id="fname", name="fname", placeholder="Enter name">
+                        <input type="text" , id="fname" , name="fname" , placeholder="Enter name">
                     </div>
-                    
+
                     <div class="inputfield" id="surnameField">
                         <label for="fsurname">Surname:</label>
-                        <input type="text", id="fsurname", name="fsurname", placeholder="Enter surnname">
+                        <input type="text" , id="fsurname" , name="fsurname" , placeholder="Enter surname">
                     </div>
 
-                    <div class="inputfield", id="idField">
-                        <label for="fid">id:</label>
-                        <input type="text", id="fid", name="fid", placeholder="Enter id">
+                    <div class="inputfield" id="genderField">
+                        <label for="fgender">Gender:</label>
+                        <input type="text" , id="fgender" , name="fgender" , placeholder="Enter gender">
                     </div>
 
-                    <div class="inputfield", id="usernameField">
-                        <label for="fusername">Username:</label>
-                        <input type="text", id="fusername", name="fusername", placeholder="Enter username">
+                    <div class="inputfield" id="birthdateField">
+                        <label for="fbirthdate">Birth date:</label>
+                        <input type="text" , id="fbirthdate" , name="fbirthdate" , placeholder="Enter birth date">
                     </div>
 
-                    <div class="inputfield", id="passwordField">
-                        <label for="fpassword">Password:</label>
-                        <input type="text", id="fpassword", name="fpassword", placeholder="Enter password">
+                    <div class="inputfield" id="addressField">
+                        <label for="faddress">Address:</label>
+                        <input type="text" , id="faddress" , name="faddress" , placeholder="Enter address">
                     </div>
 
-                    <div class="inputfield", id="course_idField">
+                    <div class="inputfield" id="emailField">
+                        <label for="femail">Email:</label>
+                        <input type="text" , id="femail" , name="femail" , placeholder="Enter email">
+                    </div>
+
+                    <div class="inputfield" id="phonenumberField">
+                        <label for="fphonenumber">Phone number:</label>
+                        <input type="text" , id="fphonenumber" , name="fphonenumber" , placeholder="Enter phone number">
+                    </div>
+
+                    <!-- STUDENT -->
+                    <div class="inputfield" , id="course_idField">
                         <label for="fcourse_id">Course id:</label>
                         <input type="text" name="fcourse_id" id="fcourse_id">
                     </div>
 
-                    <div class="inputfield", id="course_codeField">
+                    <div class="inputfield" , id="course_codeField">
                         <label for="fcourse_code">Course code:</label>
                         <input type="text" name="fcourse_code" id="fcourse_code">
                     </div>
 
-                    <div class="inputfield", id="course_creditsField">
+                    <div class="inputfield" , id="course_creditsField">
                         <label for="fcourse_credits">Course credits:</label>
                         <input type="text" name="fcourse_credits" id="fcourse_credits">
                     </div>
 
-                    <div class="inputfield", id="student_idField">
+                    <div class="inputfield" , id="student_idField">
                         <label for="fstudent_id">Student id:</label>
                         <input type="text" name="fstudent_id" id="fstudent_id">
                     </div>
 
-                    <div class="inputfield", id="student_cgpaField">
+                    <div class="inputfield" , id="student_cgpaField">
                         <label for="fstudent_cgpa">CGPA:</label>
                         <input type="text" name="fstudent_cgpa" id="fstudent_cgpa">
                     </div>
@@ -89,102 +118,102 @@
                         <input type="text" name="fstudent_enroll_year" id="fstudent_enroll_year"> 
                     </div>
                     -->
-                    
-                    <div class="inputfield", id="student_scholarshipField">
+
+                    <div class="inputfield" , id="student_scholarshipField">
                         <label for="fstudent_scholarship">Scholarship:</label>
                         <input type="text" name="fstudent_scholarship" id="fstudent_scholarship">
                     </div>
 
-                    <div class="inputfield", id="student_levelField">
+                    <div class="inputfield" , id="student_levelField">
                         <label for="fstudent_level">Level:</label>
                         <input type="text" name="fstudent_level" id="fstudent_level">
                     </div>
 
-                    <div class="inputfield", id="student_advisor_idField">
+                    <div class="inputfield" , id="student_advisor_idField">
                         <label for="fstudent_advisor_id">Advisor id:</label>
                         <input type="text" name="fstudent_advisor_id" id="fstudent_advisor_id">
                     </div>
 
-                    <div class="inputfield", id="club_idField">
+                    <div class="inputfield" , id="club_idField">
                         <label for="fclub_id">Club id:</label>
                         <input type="text" name="fclub_id" id="fclub_id">
                     </div>
 
-                    <div class="inputfield", id="club_member_countField">
+                    <div class="inputfield" , id="club_member_countField">
                         <label for="fclub_member_count">Member count:</label>
                         <input type="text" name="fclub_member_count" id="fclub_member_count">
                     </div>
 
-                    <div class="inputfield", id="club_emailField">
+                    <div class="inputfield" , id="club_emailField">
                         <label for="fclub_email">Email:</label>
                         <input type="text" name="fclub_email" id="fclub_email">
                     </div>
 
-                    <div class="inputfield", id="club_nameField">
+                    <div class="inputfield" , id="club_nameField">
                         <label for="fclub_name">Name:</label>
                         <input type="text" name="fclub_name" id="fclub_name">
                     </div>
-                    
-                    <div class="inputfield", id="faculty_idField">
+
+                    <div class="inputfield" , id="faculty_idField">
                         <label for="ffaculty_id">Faculty id:</label>
                         <input type="text" name="ffaculty_id" id="ffaculty_id">
                     </div>
 
-                    <div class="inputfield", id="faculty_nameField">
+                    <div class="inputfield" , id="faculty_nameField">
                         <label for="ffaculty_name">Name:</label>
                         <input type="text" name="ffaculty_name" id="ffaculty_name">
                     </div>
 
-                    <div class="inputfield", id="faculty_room_countField">
+                    <div class="inputfield" , id="faculty_room_countField">
                         <label for="ffaculty_room_count">Room count:</label>
                         <input type="text" name="ffaculty_room_count" id="ffaculty_room_count">
                     </div>
-                    
-                    <div class="inputfield", id="program_idField">
+
+                    <div class="inputfield" , id="program_idField">
                         <label for="fprogram_id">Program id:</label>
                         <input type="text" name="fprogram_id" id="fprogram_id">
                     </div>
 
-                    <div class="inputfield", id="program_nameField">
+                    <div class="inputfield" , id="program_nameField">
                         <label for="fprogram_name">Name:</label>
                         <input type="text" name="fprogram_name" id="fprogram_name">
                     </div>
 
-                    <div class="inputfield", id="timeslot_idField">
+                    <div class="inputfield" , id="timeslot_idField">
                         <label for="ftimeslot_id">Timeslot id:</label>
                         <input type="text" name="ftimeslot_id" id="ftimeslot_id">
                     </div>
 
-                    <div class="inputfield", id="timeslot_dayField">
+                    <div class="inputfield" , id="timeslot_dayField">
                         <label for="ftimeslot_day">Day:</label>
                         <input type="text" name="ftimeslot_day" id="ftimeslot_day">
                     </div>
 
-                    <div class="inputfield", id="timeslot_begin_timeField">
+                    <div class="inputfield" , id="timeslot_begin_timeField">
                         <label for="ftimeslot_begin_time">Begin time:</label>
                         <input type="text" name="ftimeslot_begin_time" id="ftimeslot_begin_time">
                     </div>
 
-                    <div class="inputfield", id="timeslot_end_timeField">
+                    <div class="inputfield" , id="timeslot_end_timeField">
                         <label for="ftimeslot_end_time">End time:</label>
                         <input type="text" name="ftimeslot_end_time" id="ftimeslot_end_time">
                     </div>
 
-                    
+
 
                     <!--insert all possible input fields-->
 
                 </div>
 
-                
-                <button type="submit">Insert</button>
-                
-            </fieldset>
 
+                <button type="submit" , name="action" , value="insert">Insert</button>
+                <button type="submit" , name="action" , value="view_table">View Table</button>
+
+            </fieldset>
         </Form>
-        
     </div>
     <script src="insertion.js"></script>
-    
+
 </body>
+
 </html>
