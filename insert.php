@@ -128,6 +128,23 @@
             $club_id = $_POST['fmanages_club_id'];
             $role = $_POST['fmanages_role'];
             $sql_statement = "INSERT INTO manages(student_id,club_id,role) VALUES ($student_id,$club_id,'$role')";
+        } elseif ($type == "member_of") {
+            $student_id = $_POST['fmember_of_student_id'];
+            $club_id = $_POST['fmember_of_club_id'];
+            $sql_statement = "INSERT INTO member_of(student_id,club_id) VALUES ($student_id,$club_id)";
+        } elseif ($type == "enrolls_in") {
+            $student_id = $_POST['fenrolls_in_student_id'];
+            $program_id = $_POST['fenrolls_in_program_id'];
+            $sql_statement = "INSERT INTO enrolls_in(student_id,program_id) VALUES ($student_id,$program_id)";
+        } elseif ($type == "counts_in") {
+            $course_id = $_POST['fcounts_in_course_id'];
+            $program_id = $_POST['fcounts_in_program_id'];
+            $type = $_POST['fcounts_in_type'];
+            $sql_statement = "INSERT INTO counts_in(course_id,program_id,type) VALUES ($course_id,$program_id,'$type')";
+        } elseif ($type == "has_prerequisite") {
+            $course_id = $_POST['fhas_prerequisite_course_id'];
+            $prerequisite_id = $_POST['fhas_prerequisite_prerequisite_id'];
+            $sql_statement = "INSERT INTO has_prerequisite(course_id,prerequisite_id) VALUES ($course_id,$prerequisite_id)";
         }
 
 

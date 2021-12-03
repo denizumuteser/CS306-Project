@@ -16,10 +16,14 @@ clearFields();
 document.getElementById('ftype').onchange = function (e) {
     clearFields();
     value = e.target.value;
+<<<<<<< HEAD
     console.log("ÇALIŞIYORUM AMK");
     console.log("AMK OF");
     console.log("ANNEN");
     console.log("ANNEN2");
+=======
+    
+>>>>>>> e26b554264ae1170aa9cdaaa5e70b2408f7c9e04
 
     if (value == "person") {
         document.getElementById("idField").style.display = "block";
@@ -82,6 +86,28 @@ document.getElementById('ftype').onchange = function (e) {
         document.getElementById("timeslot_dayField").style.display = "block";
         document.getElementById("timeslot_begin_timeField").style.display = "block";
         document.getElementById("timeslot_end_timeField").style.display = "block";
+    }
+    else if (value == "manages") {
+        document.getElementById("manages_student_idField").style.display = "block";
+        document.getElementById("manages_club_idField").style.display = "block";
+        document.getElementById("manages_roleField").style.display = "block";
+    }
+    else if (value == "member_of") {
+        document.getElementById("member_of_student_idField").style.display = "block";
+        document.getElementById("member_of_club_idField").style.display = "block";
+    }
+    else if (value == "enrolls_in") {
+        document.getElementById("enrolls_in_student_idField").style.display = "block";
+        document.getElementById("enrolls_in_program_idField").style.display = "block";
+    }
+    else if (value == "counts_in") {
+        document.getElementById("counts_in_course_idField").style.display = "block";
+        document.getElementById("counts_in_program_idField").style.display = "block";
+        document.getElementById("counts_in_typeField").style.display = "block";
+    }
+    else if (value == "has_prerequisite") {
+        document.getElementById("has_prerequisite_course_idField").style.display = "block";
+        document.getElementById("has_prerequisite_prerequisite_idField").style.display = "block";
     }
 
     else if (value == "manages") {
