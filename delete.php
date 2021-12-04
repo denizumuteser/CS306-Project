@@ -25,28 +25,30 @@
     if ($_POST['action'] == 'view_table') {
         if (!empty($_POST['ftype'])) {
             $type = $_POST['ftype'];
-            $sql_statement = "SHOW COLUMNS FROM $type";
-            $result = mysqli_query($db, $sql_statement);
 
-            echo "<div align='center'><table><tr>";
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<th>" . $row['Field'] . "</th>";
-            }
-            echo "</tr>";
+            echo "<div align='center'><table>";
 
             $sql_statement = "SELECT * FROM $type";
             $result = mysqli_query($db, $sql_statement);
 
+            $counter = 0;
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                foreach ($row as $key => $value) {
-                    if (is_null($value)) {
-                        echo "<th>" . "NULL" . "</th>";
-                    } else {
-                        echo "<th>" . $value . "</th>";
+                if ($counter == 0) {
+                    foreach ($row as $key => $value) {
+                        echo "<th>" . $key . "</th>";
+                    }
+                } else {
+                    foreach ($row as $key => $value) {
+                        if (is_null($value)) {
+                            echo "<td>" . "NULL" . "</td>";
+                        } else {
+                            echo "<td>" . $value . "</td>";
+                        }
                     }
                 }
                 echo "</tr>";
+                $counter++;
             }
 
             echo "</table></div>";
