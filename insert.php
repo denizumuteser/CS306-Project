@@ -33,18 +33,20 @@
 
             $counter = 0;
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
                 if ($counter == 0) {
+                    echo "<tr>";
                     foreach ($row as $key => $value) {
                         echo "<th>" . $key . "</th>";
                     }
-                } else {
-                    foreach ($row as $key => $value) {
-                        if (is_null($value)) {
-                            echo "<td>" . "NULL" . "</td>";
-                        } else {
-                            echo "<td>" . $value . "</td>";
-                        }
+                    echo "</tr>";
+                }
+
+                echo "<tr>";
+                foreach ($row as $key => $value) {
+                    if (is_null($value)) {
+                        echo "<td>" . "NULL" . "</td>";
+                    } else {
+                        echo "<td>" . $value . "</td>";
                     }
                 }
                 echo "</tr>";

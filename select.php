@@ -33,20 +33,9 @@
 
         echo "SQL statement: " . $sql_statement . "<br><br>";
 
-        #$type = $_POST['fselectfrom'];
-        #$sql_statement_2 = "SHOW COLUMNS FROM ($sql_statement)";
-        #$result = mysqli_query($db, $sql_statement_2);
-
         echo "<div class='sql-table'><table>";
-        
-        #while ($row = mysqli_fetch_array($result)) {
-        #    echo "<th>" . $row['Field'] . "</th>";
-        #}
-        #echo "</tr>";
 
         $result = mysqli_query($db, $sql_statement);
-
-
 
         if ($result) {
         } else {
@@ -56,20 +45,20 @@
 
         $counter = 0;
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-
             if ($counter == 0) {
+                echo "<tr>";
                 foreach ($row as $key => $value) {
                     echo "<th>" . $key . "</th>";
                 }
-            } else {
+                echo "</tr>";
+            }
 
-                foreach ($row as $key => $value) {
-                    if (is_null($value)) {
-                        echo "<td>" . "NULL" . "</td>";
-                    } else {
-                        echo "<td>" . $value . "</td>";
-                    }
+            echo "<tr>";
+            foreach ($row as $key => $value) {
+                if (is_null($value)) {
+                    echo "<td>" . "NULL" . "</td>";
+                } else {
+                    echo "<td>" . $value . "</td>";
                 }
             }
             echo "</tr>";
