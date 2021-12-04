@@ -23,26 +23,28 @@
                 <input type="text" , id="fselectwhat" , name="fselectwhat">
 
                 <label for="fselectfrom">FROM</label>
-                <select name="fselectfrom" , id="fselectfrom">
+                <input type="text" name="fselectfrom" list="fselectfrom">
+                <datalist id="fselectfrom">
                     <option value=""></option>
-                    <option value="person">Person</option>
-                    <option value="student">Student</option>
-                    <option value="instructor">Instructor</option>
-                    <option value="faculty">Faculty</option>
-                    <option value="club">Club</option>
-                    <option value="course">Course</option>
-                    <option value="program">Program</option>
-                    <option value="timeslot">TimeSlot</option>
-                    <option value="manages">Manages</option>
-                    <option value="member_of">Member_of</option>
-                    <option value="enrolls_in">Enrolls_in</option>
-                    <option value="counts_in">Counts_in</option>
-                    <option value="has_prerequisite">Has_prerequisite</option>
-                    <option value="section">Section</option>
-                    <option value="takes">Takes</option>
-                    <option value="offers">Offers</option>
-                    <option value="scheduled">Scheduled</option>
-                </select>
+                    <option value="person"></option>
+                    <option value="student"></option>
+                    <option value="instructor"></option>
+                    <option value="faculty"></option>
+                    <option value="club"></option>
+                    <option value="course"></option>
+                    <option value="program"></option>
+                    <option value="timeslot"></option>
+                    <option value="manages"></option>
+                    <option value="member_of"></option>
+                    <option value="enrolls_in"></option>
+                    <option value="counts_in"></option>
+                    <option value="has_prerequisite"></option>
+                    <option value="section"></option>
+                    <option value="takes"></option>
+                    <option value="offers"></option>
+                    <option value="scheduled"></option>
+                </datalist>
+                
 
                 <label for="fselectwhere">WHERE</label>
                 <input type="text" , id="fselectwhere" , name="fselectwhere">
