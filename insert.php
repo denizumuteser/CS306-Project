@@ -12,7 +12,7 @@
 <body>
     <div class="header">
         <h1>Web Interface Administration Panel</h1>
-        <a class="return" href="./insertion.php">Return</a>
+        <a class="return" href="javascript:history.back()">Return</a>
     </div>
 
     <br>
@@ -98,7 +98,7 @@
 
             $sql_statement = "INSERT INTO faculty(faculty_id,name,room_count) VALUES ($id,$name,$roomcount)";
         } elseif ($type == "club") {
-            $id = empty($_POST['fclub_id']) ? "NULL" : "'" . $_POST['fclub_id'] . "'";
+            $id = empty($_POST['fclub_id']) ? "NULL" : $_POST['fclub_id'];
             $email = empty($_POST['fclub_email']) ? "NULL" : "'" . $_POST['fclub_email'] . "'";
             $name = empty($_POST['fclub_name']) ? "NULL" : "'" . $_POST['fclub_name'] . "'";
 
@@ -117,35 +117,70 @@
 
             $sql_statement = "INSERT INTO program(program_id,name) VALUES ($id,$name)";
         } elseif ($type == "timeslot") {
-            $id = $_POST['ftimeslot_id'];
-            $day = $_POST['ftimeslot_day'];
-            $begin_time = $_POST['ftimeslot_begin_time'];
-            $end_time = $_POST['ftimeslot_end_time'];
-            // koray was here but could not figure out how to implement day and time variables below here :)
-            $sql_statement = "INSERT INTO program(timeslot_id,day,begin_time,end_time) VALUES ($id,'$day')";
+            $id = empty($_POST['ftimeslot_id']) ? "NULL" : $_POST['ftimeslot_id'];
+            $day = empty($_POST['ftimeslot_day']) ? "NULL" : "'" . $_POST['ftimeslot_day'] . "'";
+            $begin_time = empty($_POST['ftimeslot_begin_time']) ? "NULL" : "'" . $_POST['ftimeslot_begin_time'] . "'";
+            $end_time = empty($_POST['ftimeslot_end_time']) ? "NULL" : "'" . $_POST['ftimeslot_end_time'] . "'";
+
+            $sql_statement = "INSERT INTO timeslot(timeslot_id,day,begin_time,end_time) VALUES ($id,$day,$begin_time,$end_time)";
         } elseif ($type == "manages") {
-            $student_id = $_POST['fmanages_student_id'];
-            $club_id = $_POST['fmanages_club_id'];
-            $role = $_POST['fmanages_role'];
-            $sql_statement = "INSERT INTO manages(student_id,club_id,role) VALUES ($student_id,$club_id,'$role')";
+            $student_id = empty($_POST['fmanages_student_id']) ? "NULL" : $_POST['fmanages_student_id'];
+            $club_id = empty($_POST['fmanages_club_id']) ? "NULL" : $_POST['fmanages_club_id'];
+            $role = empty($_POST['fmanages_role']) ? "NULL" : "'" . $_POST['fmanages_role'] . "'";
+
+            $sql_statement = "INSERT INTO manages(student_id,club_id,role) VALUES ($student_id,$club_id,$role)";
         } elseif ($type == "member_of") {
-            $student_id = $_POST['fmember_of_student_id'];
-            $club_id = $_POST['fmember_of_club_id'];
+            $student_id = empty($_POST['fmember_of_student_id']) ? "NULL" : $_POST['fmember_of_student_id'];
+            $club_id = empty($_POST['fmember_of_club_id']) ? "NULL" : $_POST['fmember_of_club_id'];
+
             $sql_statement = "INSERT INTO member_of(student_id,club_id) VALUES ($student_id,$club_id)";
         } elseif ($type == "enrolls_in") {
-            $student_id = $_POST['fenrolls_in_student_id'];
-            $program_id = $_POST['fenrolls_in_program_id'];
+            $student_id = empty($_POST['fenrolls_in_student_id']) ? "NULL" : $_POST['fenrolls_in_student_id'];
+            $program_id = empty($_POST['fenrolls_in_program_id']) ? "NULL" : $_POST['fenrolls_in_program_id'];
+
             $sql_statement = "INSERT INTO enrolls_in(student_id,program_id) VALUES ($student_id,$program_id)";
         } elseif ($type == "counts_in") {
-            $course_id = $_POST['fcounts_in_course_id'];
-            $program_id = $_POST['fcounts_in_program_id'];
-            $type = $_POST['fcounts_in_type'];
-            $sql_statement = "INSERT INTO counts_in(course_id,program_id,type) VALUES ($course_id,$program_id,'$type')";
+            $course_id = empty($_POST['fcounts_in_course_id']) ? "NULL" : $_POST['fcounts_in_course_id'];
+            $program_id = empty($_POST['fcounts_in_program_id']) ? "NULL" : $_POST['fcounts_in_program_id'];
+            $type = empty($_POST['fcounts_in_type']) ? "NULL" : "'" . $_POST['fcounts_in_type'] . "'";
+
+            $sql_statement = "INSERT INTO counts_in(course_id,program_id,type) VALUES ($course_id,$program_id,$type)";
         } elseif ($type == "has_prerequisite") {
-            $course_id = $_POST['fhas_prerequisite_course_id'];
-            $prerequisite_id = $_POST['fhas_prerequisite_prerequisite_id'];
+            $course_id = empty($_POST['fhas_prerequisite_course_id']) ? "NULL" : $_POST['fhas_prerequisite_course_id'];
+            $prerequisite_id = empty($_POST['fhas_prerequisite_prerequisite_id']) ? "NULL" : $_POST['fhas_prerequisite_prerequisite_id'];
+
             $sql_statement = "INSERT INTO has_prerequisite(course_id,prerequisite_id) VALUES ($course_id,$prerequisite_id)";
+        } elseif ($type == "section") {
+            $id = empty($_POST['fsection_id']) ? "NULL" : $_POST['fsection_id'];
+            $section_course_id = empty($_POST['fsection_course_id']) ? "NULL" : $_POST['fsection_course_id'];
+            $location = empty($_POST['fsection_location']) ? "NULL" : "'" . $_POST['fsection_location'] . "'";
+            $code = empty($_POST['fsection_code']) ? "NULL" : "'" . $_POST['fsection_code'] . "'";
+            $capacity = empty($_POST['fsection_capacity']) ? "NULL" : $_POST['fsection_capacity'];
+
+            $sql_statement = "INSERT INTO section(section_id, course_id, location, code, capacity) VALUES ($id, $section_course_id, $location, $code, $capacity)";
+        } elseif ($type == "takes") {
+            $student_id = empty($_POST['ftakes_student_id']) ? "NULL" : $_POST['ftakes_student_id'];
+            $section_id = empty($_POST['ftakes_section_id']) ? "NULL" : $_POST['ftakes_section_id'];
+            $course_id = empty($_POST['ftakes_course_id']) ? "NULL" : $_POST['ftakes_course_id'];
+            $letter_grade = empty($_POST['ftakes_letter_grade']) ? "NULL" : "'" . $_POST['ftakes_letter_grade'] . "'";
+            $term = empty($_POST['ftakes_term']) ? "NULL" : "'" . $_POST['ftakes_term'] . "'";
+
+            $sql_statement = "INSERT INTO takes(student_id, section_id, course_id, letter_grade, term) VALUES ($student_id, $section_id, $course_id, $letter_grade, $term)";
+        } elseif ($type == "offers") {
+            $instructor_id = empty($_POST['foffers_instructor_id']) ? "NULL" : $_POST['foffers_instructor_id'];
+            $faculty_id = empty($_POST['foffers_faculty_id']) ? "NULL" : $_POST['foffers_faculty_id'];
+            $course_id = empty($_POST['foffers_course_id']) ? "NULL" : $_POST['foffers_course_id'];
+            $term = empty($_POST['foffers_term']) ? "NULL" : "'" . $_POST['foffers_term'] . "'";
+
+            $sql_statement = "INSERT INTO offers(instructor_id, faculty_id, course_id, term) VALUES ($instructor_id, $faculty_id, $course_id, $term)";
+        } elseif ($type == "scheduled") {
+            $scheduled_timeslot_id = empty($_POST['fscheduled_timeslot_id']) ? "NULL" : $_POST['fscheduled_timeslot_id'];
+            $scheduled_section_id = empty($_POST['fscheduled_section_id']) ? "NULL" : $_POST['fscheduled_section_id'];
+            $scheduled_course_id = empty($_POST['fscheduled_course_id']) ? "NULL" : $_POST['fscheduled_course_id'];
+
+            $sql_statement = "INSERT INTO scheduled(timeslot_id, section_id, course_id) VALUES ($scheduled_timeslot_id, $scheduled_section_id, $scheduled_course_id)";
         }
+
 
 
 
@@ -158,7 +193,7 @@
         if ($result == 1) {
             echo "<br>Insertion completed successfully";
         } else {
-            echo "<br>" . mysqli_error($db);
+            echo "<br>Insertion failed.<br>" . mysqli_error($db);
         }
     } else {
         echo "ERROR: No relation selected.<br>Please choose a relation first before trying to insert or view the selected relation.";

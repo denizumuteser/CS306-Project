@@ -37,6 +37,11 @@
                     <option value="enrolls_in">Enrolls_in</option>
                     <option value="counts_in">Counts_in</option>
                     <option value="has_prerequisite">Has_prerequisite</option>
+                    <option value="section">Section</option>
+                    <option value="takes">Takes</option>
+                    <option value="offers">Offers</option>
+                    <option value="scheduled">Scheduled</option>
+
 
                     <!--insert all insertable things here-->
                 </select>
@@ -240,6 +245,7 @@
                         <label for="ftimeslot_end_time">End time:</label>
                         <input type="text" name="ftimeslot_end_time" id="ftimeslot_end_time">
                     </div>
+
                     <!-- MANAGES -->
                     <div class="inputfield" , id="manages_student_idField">
                         <label for="fmanages_student_id">Student id:</label>
@@ -255,6 +261,7 @@
                         <label for="fmanages_role">Role:</label>
                         <input type="text" name="fmanages_role" id="fmanages_role">
                     </div>
+
                     <!-- MEMBER_OF -->
                     <div class="inputfield" , id="member_of_student_idField">
                         <label for="fmember_of_student_id">Student id:</label>
@@ -265,7 +272,8 @@
                         <label for="fmember_of_club_id">Club id:</label>
                         <input type="text" name="fmember_of_club_id" id="fmember_of_club_id">
                     </div>
-                    <!-- MEMBER_OF -->
+
+                    <!-- ENROLLS_IN -->
                     <div class="inputfield" , id="enrolls_in_student_idField">
                         <label for="fenrolls_in_student_id">Student id:</label>
                         <input type="text" name="fenrolls_in_student_id" id="fenrolls_in_student_id">
@@ -275,7 +283,8 @@
                         <label for="fenrolls_in_program_id">Program id:</label>
                         <input type="text" name="fenrolls_in_program_id" id="fenrolls_in_program_id">
                     </div>
-                    <!-- Counts_IN -->
+
+                    <!-- COUNTS_IN -->
                     <div class="inputfield" , id="counts_in_course_idField">
                         <label for="fcounts_in_course_id">Course id:</label>
                         <input type="text" name="fcounts_in_course_id" id="fcounts_in_course_id">
@@ -285,19 +294,112 @@
                         <label for="fcounts_in_program_id">Program id:</label>
                         <input type="text" name="fcounts_in_program_id" id="fcounts_in_program_id">
                     </div>
+
                     <div class="inputfield" , id="counts_in_typeField">
                         <label for="fcounts_in_type">Type:</label>
                         <input type="text" name="fcounts_in_type" id="fcounts_in_type">
                     </div>
-                    <!-- Counts_IN -->
+
+                    <!-- HAS_PREREQUISITE -->
                     <div class="inputfield" , id="has_prerequisite_course_idField">
                         <label for="fhas_prerequisite_course_id">Course id:</label>
                         <input type="text" name="fhas_prerequisite_course_id" id="fhas_prerequisite_course_id">
                     </div>
+
                     <div class="inputfield" , id="has_prerequisite_prerequisite_idField">
                         <label for="fhas_prerequisite_prerequisite_id">Prerequisite id:</label>
                         <input type="text" name="fhas_prerequisite_prerequisite_id" id="fhas_prerequisite_prerequisite_id">
                     </div>
+
+                    <!-- SECTION -->
+                    <div class="inputfield" , id="section_idField">
+                        <label for="fsection_id">Section id:</label>
+                        <input type="text" name="fsection_id" id="fsection_id">
+                    </div>
+
+                    <div class="inputfield" , id="section_course_idField">
+                        <label for="fsection_course_id">Course id:</label>
+                        <input type="text" name="fsection_course_id" id="fsection_course_id">
+                    </div>
+
+                    <div class="inputfield" , id="section_locationField">
+                        <label for="fsection_location">Section location:</label>
+                        <input type="text" name="fsection_location" id="fsection_location">
+                    </div>
+
+                    <div class="inputfield" , id="section_codeField">
+                        <label for="fsection_code"> Section code:</label>
+                        <input type="text" name="fsection_code" id="fsection_code">
+                    </div>
+
+                    <div class="inputfield" , id="section_capacityField">
+                        <label for="fsection_capacity">Section capacity:</label>
+                        <input type="text" name="fsection_capacity" id="fsection_capacity">
+                    </div>
+
+                    <!-- TAKES -->
+                    <div class="inputfield" , id="takes_student_idField">
+                        <label for="ftakes_student_id">Student id:</label>
+                        <input type="text" name="ftakes_student_id" id="ftakes_student_id">
+                    </div>
+
+                    <div class="inputfield" , id="takes_section_idField">
+                        <label for="ftakes_section_id">Section id:</label>
+                        <input type="text" name="ftakes_section_id" id="ftakes_section_id">
+                    </div>
+
+                    <div class="inputfield" , id="takes_course_idField">
+                        <label for="ftakes_course_id">Course id:</label>
+                        <input type="text" name="ftakes_course_id" id="ftakes_course_id">
+                    </div>
+
+                    <div class="inputfield" , id="takes_letter_gradeField">
+                        <label for="ftakes_letter_grade">Letter grade:</label>
+                        <input type="text" name="ftakes_letter_grade" id="ftakes_letter_grade">
+                    </div>
+
+                    <div class="inputfield" , id="takes_termField">
+                        <label for="ftakes_term">Term:</label>
+                        <input type="text" name="ftakes_term" id="ftakes_term">
+                    </div>
+
+                    <!-- OFFERS -->
+                    <div class="inputfield" , id="offers_instructor_idField">
+                        <label for="foffers_instructor_id">Instructor id:</label>
+                        <input type="text" name="foffers_instructor_id" id="foffers_instructor_id">
+                    </div>
+
+                    <div class="inputfield" , id="offers_faculty_idField">
+                        <label for="foffers_faculty_id">Faculty id:</label>
+                        <input type="text" name="foffers_faculty_id" id="foffers_faculty_id">
+                    </div>
+
+                    <div class="inputfield" , id="offers_course_idField">
+                        <label for="foffers_course_id">Course id:</label>
+                        <input type="text" name="foffers_course_id" id="foffers_course_id">
+                    </div>
+
+                    <div class="inputfield" , id="offers_termField">
+                        <label for="foffers_term">Term:</label>
+                        <input type="text" name="foffers_term" id="foffers_term">
+                    </div>
+
+                    <!-- SCHEDULED -->
+                    <div class="inputfield" , id="scheduled_timeslot_idField">
+                        <label for="fscheduled_timeslot_id">Timeslot id:</label>
+                        <input type="text" name="fscheduled_timeslot_id" id="fscheduled_timeslot_id">
+                    </div>
+
+                    <div class="inputfield" , id="scheduled_section_idField">
+                        <label for="fscheduled_section_id">Section id:</label>
+                        <input type="text" name="fscheduled_section_id" id="fscheduled_section_id">
+                    </div>
+
+                    <div class="inputfield" , id="scheduled_course_idField">
+                        <label for="fscheduled_course_id">Course id:</label>
+                        <input type="text" name="fscheduled_course_id" id="fscheduled_course_id">
+                    </div>
+
                     <!--insert all possible input fields-->
 
                 </div>
