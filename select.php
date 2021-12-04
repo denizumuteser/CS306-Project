@@ -33,19 +33,20 @@
 
         echo "SQL statement: " . $sql_statement . "<br><br>";
 
+        #$type = $_POST['fselectfrom'];
+        #$sql_statement_2 = "SHOW COLUMNS FROM ($sql_statement)";
+        #$result = mysqli_query($db, $sql_statement_2);
+
+        echo "<div class='sql-table'><table>";
+        
+        #while ($row = mysqli_fetch_array($result)) {
+        #    echo "<th>" . $row['Field'] . "</th>";
+        #}
+        #echo "</tr>";
+
         $result = mysqli_query($db, $sql_statement);
 
-        $type = $_POST['fselectfrom'];
-        $sql_statement_2 = "SHOW COLUMNS FROM $type";
-        $result = mysqli_query($db, $sql_statement_2);
 
-        echo "<div align='center'><table><tr>";
-        while ($row = mysqli_fetch_array($result)) {
-            echo "<th>" . $row['Field'] . "</th>";
-        }
-        echo "</tr>";
-
-        $result = mysqli_query($db, $sql_statement);
 
         if ($result) {
         } else {
@@ -53,16 +54,26 @@
             return;
         }
 
+        $counter = 0;
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            foreach ($row as $key => $value) {
-                if (is_null($value)) {
-                    echo "<th>" . "NULL" . "</th>";
-                } else {
-                    echo "<th>" . $value . "</th>";
+
+            if ($counter == 0) {
+                foreach ($row as $key => $value) {
+                    echo "<th>" . $key . "</th>";
+                }
+            } else {
+
+                foreach ($row as $key => $value) {
+                    if (is_null($value)) {
+                        echo "<td>" . "NULL" . "</td>";
+                    } else {
+                        echo "<td>" . $value . "</td>";
+                    }
                 }
             }
             echo "</tr>";
+            $counter++;
         }
 
         echo "</table></div>";
