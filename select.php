@@ -51,6 +51,7 @@
                     echo "<th>" . $key . "</th>";
                 }
                 echo "</tr>";
+                $counter++;
             }
 
             echo "<tr>";
@@ -62,7 +63,6 @@
                 }
             }
             echo "</tr>";
-            $counter++;
         }
 
         echo "</table></div>";

@@ -39,6 +39,7 @@
                         echo "<th>" . $key . "</th>";
                     }
                     echo "</tr>";
+                    $counter++;
                 }
 
                 echo "<tr>";
