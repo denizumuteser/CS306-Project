@@ -19,6 +19,7 @@
     <h2>Operations</h2>
     <a class="btn" href="./transcript_form.php">Transcript</a>
     <a class="btn" href="./course_schedule_form.php">Course Schedule</a>
+    <a class="btn" href="./club_members_lists.php">Club Member Lists</a>
   </div>
 </body>
 
