@@ -14,7 +14,7 @@
     <h1>Web Interface Features Panel</h1>
     <a class="return" href="javascript:history.back()">Return</a>
   </div>
-  <h3>Displaying Transcript</h3>
+  <h3>Displaying Course Schedule</h3>
 
   <?php
 
@@ -62,10 +62,10 @@
     echo "</table></div>";
     echo "<br>";
 
-    $sql_statement = "SELECT C.code as CourseCode, C.name as CourseName, C.credits as CourseCredits, T.term as TermTaken, T.letter_grade as LetterGrade FROM person P, student S, takes T, course C WHERE P.id = S.student_id AND S.student_id = T.student_id AND T.course_id = C.course_id AND S.student_id = $student_id ORDER BY T.term ASC";
+    $sql_statement = "SELECT C.name as CourseName, C.code as CourseCode, SCT.code as SectionCode, SCT.location as Location, TM.day as Day, TM.begin_time as BeginTime, TM.end_time as EndTime FROM student S, takes T, course C, section SCT, scheduled SCH, timeslot TM WHERE S.student_id = T.student_id AND T.course_id = C.course_id AND T.section_id = SCT.section_id AND SCT.section_id = SCH.section_id and SCH.timeslot_id = TM.timeslot_id AND T.letter_grade = 'IP' AND S.student_id = $student_id ORDER BY Day, BeginTime";
 
     echo "<div class='sql-table'><table>";
-    echo "<tr><th>Course History</th></tr>";
+    echo "<tr><th>Course Schedule</th></tr>";
 
     $result = mysqli_query($db, $sql_statement);
 
