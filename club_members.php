@@ -62,7 +62,7 @@
     echo "</table></div>";
     echo "<br>";
 
-    $sql_statement = "SELECT P.name as Name, P.surname as Surname, S.student_id as ID, MAN.role as Role, P.email as email FROM person P, student S, club C, member_of M, manages MAN WHERE P.id = S.student_id AND M.student_id = S.student_id AND C.club_id = M.club_id  AND C.club_id = $club_id AND Man.club_id = C.club_id ";
+    $sql_statement = "SELECT P.name as Name, P.surname as Surname, S.student_id as ID, P.email as Email FROM person P, student S, member_of MEM, club C WHERE P.id = S.student_id AND S.student_id = MEM.student_id AND MEM.club_id = C.club_id AND C.club_id = $club_id";
 
     echo "<div class='sql-table'><table>";
     echo "<tr><th>Members</th></tr>";
@@ -99,7 +99,7 @@
 
     echo "</table></div>";
   } else {
-    echo "You got an error, somehow";
+    echo "In this vast universe of unlimited possibilities, it did not occur to me that you could find an error for this page... Good job!";
   }
   ?>
 
