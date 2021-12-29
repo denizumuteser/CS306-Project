@@ -99,7 +99,7 @@
 
     echo "</table></div>";
   } else {
-    echo "In this vast universe of unlimited possibilities, it did not occur to me that you could find an error for this page... Good job!";
+    echo "You got an error, somehow";
   }
   ?>
 
