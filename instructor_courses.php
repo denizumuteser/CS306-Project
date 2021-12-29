@@ -14,7 +14,7 @@
     <h1>Web Interface Features Panel</h1>
     <a class="return" href="javascript:history.back()">Return</a>
   </div>
-  <h3>Displaying Instructor Information & Course List</h3>
+  <h3>Displaying Courses by Chosen Instructor</h3>
 
   <?php
 
@@ -61,7 +61,7 @@
 
     echo "</table></div>";
     echo "<br>";
-    
+
     $sql_statement = "SELECT C.course_id as Course_ID, C.code as Course_Code, C.name as Course_Name, F.name as Faculty FROM course C, offers O, instructor I, faculty F  WHERE O.faculty_id = F.faculty_id AND C.course_id = O.course_id AND O.instructor_id = I.instructor_id AND I.instructor_id = $instructor_id ";
 
     echo "<div class='sql-table'><table>";
