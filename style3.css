@@ -1,0 +1,97 @@
+.header {
+  background-color: #da0800;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+  gap: 30px;
+}
+
+body {
+  font-family: Helvetica;
+}
+
+a {
+  text-decoration: none;
+}
+
+.return {
+  color: white;
+  font-size: 24px;
+  border: solid white 2px;
+  border-radius: 45px;
+  padding: 6px 12px 6px 12px;
+}
+
+.return:hover {
+  color: #da0800;
+  background-color: white;
+}
+
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 38px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+fieldset {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formfields {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.btn {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #da0800;
+  font-size: 28px;
+  width: 200px;
+  height: 50px;
+  padding: 10px 20px 10px 20px;
+  margin: 10px;
+  border-radius: 45px;
+  border: solid #da0800 2px;
+}
+
+.btn:hover {
+  background-color: #af0600;
+  border: solid white 2px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

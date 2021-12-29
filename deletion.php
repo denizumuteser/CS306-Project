@@ -12,7 +12,7 @@
 <body>
     <div class="header">
         <h1>Web Interface Administration Panel</h1>
-        <a class="return" href="./index.php">Return</a>
+        <a class="return" href="javascript:history.back()">Return</a>
     </div>
 
     <div class="content">
