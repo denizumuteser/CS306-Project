@@ -20,6 +20,7 @@
     <a class="btn" href="./transcript_form.php">Transcript</a>
     <a class="btn" href="./course_schedule_form.php">Course Schedule</a>
     <a class="btn" href="./club_members_lists.php">Club Member Lists</a>
+    <a class="btn" href="./instructor_courses_list.php">List Courses By Instructor</a>
   </div>
 </body>
 
